@@ -8,8 +8,5 @@ header:
   overlay_image: /assets/images/teaser_2.jpg
   # caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 ---
-
-
 <html lang="en">
-
 </html>

@@ -11,7 +11,10 @@ header:
 
 ### **International Conferences & Journals**
 --------------------------------------------
+- DynaGAN: Dynamic Few-shot Adaptation of GANs to Multiple Domains
+  - Seongtae Kim, **Kyoungkook Kang**, Geonung Kim, Seung-Hwan Baek, Sunghyun Cho
 - BigColor: Colorization using a Generative Color Prior for Natural Images
+  - SIGGRAPH ASIA 2022 [PROJECT](https://bluegorae.github.io/dynagan/)
   - Geonung Kim, **Kyoungkook Kang**, Seongtae Kim, Hwayoon Lee, Sehoon Kim, Jonghyun Kim, Seung-Hwan Baek, Sunghyun Cho
   - ECCV 2022 [PROJECT](https://kimgeonung.github.io/bigcolor/)
 - GAN Inversion for Out-of-Range Images with Geometric Transformations
@@ -22,15 +25,23 @@ header:
   - SIGGRAPH 2019 [PROJECT](/publication/SIG_2019_Interactive360/index.html)
 
 
-
-
-
-
 ### **Korean Domestic Conferences & Journals**
 --------------------------------------------
+- 회귀 기반 신경망과 적대적 생성망을 함께 활용한 영상 복원
+  - 이화윤, **강경국**, 이형민, 백승환, 조성현
+  - In Proc. IPIU 2023 [PDF](/publication/Domestic/IPIU_2023_LeeHwayoon.pdf)
+- 다중 도메인으로서의 적대적 생성 신경망의 동적 퓨삿 적응
+  - 김성태, **강경국**, 김건웅, 백승환, 조성현
+  - In Conference of Korea Computer Graphics Society (KCGS) 2022 [PDF](/publication/Domestic/KCGS_2022_DynaGAN.pdf)
+- BigGAN 인버전을 활용한 흑백 영상 색상화
+  - 김건웅, **강경국**, 김성태, 이화윤, 김세훈, 김종현, 조성현
+  - In Proc. IPIU 2022 [PDF](/publication/Domestic/IPIU_2022_BigColor.pdf)
 - 기하적 변형이 포함된 이미지의 GAN Inversion
   - **강경국**, 김성태, 조성현
   - In Conference of Korea Computer Graphics Society (KCGS) 2021 [PDF](/publication/Domestic/KCGS_2021_Abstract.pdf)
+- 고해상도 GAN 영상 편집을 위한 중간 층 미리 보기
+  - 김성태, **강경국**, 조성현
+  - In Proc. IPIU 2021 [PDF](/publication/Domestic/IPIU_2021_성태.pdf)
 - 학습 가능한 옵티마이저를 이용한 고속 StyleGAN 인버전
   - **강경국**, 김성태, 조성현
   - In Proc. IPIU 2021, **우수 논문상 은상** [PDF](/publication/Domestic/IPIU_2021_paper.pdf)
