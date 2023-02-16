@@ -13,8 +13,8 @@ header:
 --------------------------------------------
 - DynaGAN: Dynamic Few-shot Adaptation of GANs to Multiple Domains
   - Seongtae Kim, **Kyoungkook Kang**, Geonung Kim, Seung-Hwan Baek, Sunghyun Cho
-- BigColor: Colorization using a Generative Color Prior for Natural Images
   - SIGGRAPH ASIA 2022 [PROJECT](https://bluegorae.github.io/dynagan/)
+- BigColor: Colorization using a Generative Color Prior for Natural Images
   - Geonung Kim, **Kyoungkook Kang**, Seongtae Kim, Hwayoon Lee, Sehoon Kim, Jonghyun Kim, Seung-Hwan Baek, Sunghyun Cho
   - ECCV 2022 [PROJECT](https://kimgeonung.github.io/bigcolor/)
 - GAN Inversion for Out-of-Range Images with Geometric Transformations
