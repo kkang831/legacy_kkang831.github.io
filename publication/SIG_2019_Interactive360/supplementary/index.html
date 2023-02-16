@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<metra charset="UTF-8">
+		<title>Interactive and Automatic Navigation for 360&#176; Video Playback</title>
+<style>
+	body {
+		font-family: Times New Roman;
+		font-size: 16pt;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: left;
+		max-width: 1100px;
+	}
+
+	h1 {
+		font-family: Times New Roman;
+	}
+
+	h2 {
+		font-family: Times New Roman;
+	}
+
+	p {
+		font-family: Times New Roman;
+		font-size: 16pt;
+		text-align: justify;
+	}
+
+	table, th, td {
+		border: 1px solid black;
+	}
+
+
+	div.section {
+		margin-bottom: 100px;
+		border-top: 1px solid #000000;
+	}
+
+	div.video {
+		text-align: center;
+	}
+
+	div.video_source {
+		font-family: Times New Roman;
+		font-size: 12pt;
+	}
+
+</style>
+
+	<script>
+		function changeVideo(videoName, path) {
+			var video = document.getElementById(videoName);
+			var source = video.getElementsByTagName('source')[0];
+			source.setAttribute('src',path);
+			video.load();
+		}
+	</script>
+
+	</head>
+	<body>
+		<H1 align="center">Interactive and Automatic Navigation<br>for 360&#176; Video Playback</H1>
+		<p style="text-align:center">KYOUNGKOOK KANG, DGIST<br>SUNGHYUN CHO, DGIST</p>
+
+		<p style="text-align:center">
+		This HTML file is intended to view with a browser that supports HTML5.<br>
+		Please note that all video clips in this supplementary material are heavily compressed to reduce the file size.<br>
+		<br>
+		Most of the videos used in this supplementary material are from either the Pano2vid [Su et al. 2016] or Sports-360 [Hu et al. 2017] datasets.
+		After each video example, we identify the source of the original videos.
+		</p>
+
+
+		<div class='section'>
+			<H2>1. User Interaction Demo</H2>
+			<p>
+			Below are demo videos of our interactive video navigation.
+			Please note that the demo videos are not of the highest quality because of the video capture software.
+			The demo videos below show two windows side by side,
+			but the right window is shown only for demonstrating how the camera path moves on the input spherical panorama video.
+			</p>
+			<div class='video'>
+				Click a button on the right to switch to a different example:
+				<button onclick='changeVideo("user_interaction","video/interaction_demo1.mp4")'>1</button>
+				<button onclick='changeVideo("user_interaction","video/interaction_demo2.mp4")'>2</button>
+				<button onclick='changeVideo("user_interaction","video/interaction_demo3.mp4")'>3</button>
+				<button onclick='changeVideo("user_interaction","video/interaction_demo4.mp4")'>4</button>
+				<button onclick='changeVideo("user_interaction","video/interaction_demo5.mp4")'>5</button>
+				<button onclick='changeVideo("user_interaction","video/interaction_demo6.mp4")'>6</button>
+				<br>
+				<br>
+				<video id="user_interaction" width="1024" height="576" controls>
+					<source src="video/interaction_demo1.mp4" type="video/mp4">
+						<a href="video/interaction_demo1.mp4">1</a>
+						<a href="video/interaction_demo2.mp4">2</a>
+						<a href="video/interaction_demo3.mp4">3</a>
+						<a href="video/interaction_demo4.mp4">4</a>
+						<a href="video/interaction_demo5.mp4">5</a>
+						<a href="video/interaction_demo6.mp4">6</a>
+				</video>
+			</div>
+			<div class='video_source'>
+				<h4>Video Source</h4>
+				<ol>
+					<li>Sports-360, Youtube link missing</li>
+					<li>Sports-360, <a href='https://www.youtube.com/watch?v=8qRomm-uqm4'>https://www.youtube.com/watch?v=8qRomm-uqm4</a>, &copy; perropro</li>
+					<li><a href='https://www.youtube.com/watch?v=OBp2EWPjotk'>https://www.youtube.com/watch?v=OBp2EWPjotk</a>, &copy; Red Bull</li> <!--pavel  https://people.eecs.berkeley.edu/~amypavel/interactivevrview/examples/interactivevideo/interface-demo.html-->
+					<li><a href='https://www.youtube.com/watch?v=MKWWhf8RAV8'>https://www.youtube.com/watch?v=MKWWhf8RAV8</a>, &copy;GoPro
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=nT5ete4d8v0'>https://www.youtube.com/watch?v=nT5ete4d8v0</a>, &copy;Urlaub in &Ouml;sterreich</li>
+					<li>Sports-360, <a href='https://www.youtube.com/watch?v=azjQH8yE_mw'>https://www.youtube.com/watch?v=azjQH8yE_mw</a>, &copy;Kang Pardi Prabowo Old</li>
+				</ol>
+			</div>
+		</div>
+
+		<div class='section'>
+			<H2>2. Additional Examples</H2>
+			<p>Below are additional examples of our automatic navigation.</p>
+			<div class='video'>
+				Click a button on the right to switch to a different example:
+				<button onclick='changeVideo("example","video/additional/1.mp4")'>1</button>
+				<button onclick='changeVideo("example","video/additional/2.mp4")'>2</button>
+				<button onclick='changeVideo("example","video/additional/3.mp4")'>3</button>
+				<button onclick='changeVideo("example","video/additional/4.mp4")'>4</button>
+				<!--<button onclick='changeVideo("example","video/additional/5.mp4")'>5</button>-->
+				<button onclick='changeVideo("example","video/additional/6.mp4")'>5</button>
+				<br>
+				<br>
+				<video id="example" width="1024" height="576" controls>
+					<source src="video/additional/1.mp4" type="video/mp4">
+						<a href="video/additional/1.mp4">1</a>
+						<a href="video/additional/2.mp4">2</a>
+						<a href="video/additional/3.mp4">3</a>
+						<a href="video/additional/4.mp4">4</a>
+						<!--<a href="video/additional/5.mp4">5</a>-->
+						<a href="video/additional/6.mp4">5</a>
+				</video>
+			</div>
+			<div class='video_source'>
+				<h4>Video Source</h4>
+				<ol>
+					<li>Sports-360, <a href='https://www.youtube.com/watch?v=Ayh1VtA83Ms'>https://www.youtube.com/watch?v=Ayh1VtA83Ms</a>, &copy; Strife.tv</li>
+					<li>Sports-360, <a href='https://www.youtube.com/watch?v=cKMTD2zEgdc'>https://www.youtube.com/watch?v=cKMTD2zEgdc</a>, &copy; Imaginar360VR</li>
+					<li>Sports-360, <a href='https://www.youtube.com/watch?v=9uBfSL1hiZ4'>https://www.youtube.com/watch?v=9uBfSL1hiZ4</a>, &copy; en360grados</li>
+					<li>Sports-360, <a href='https://www.youtube.com/watch?v=YdIis8rUNww'>https://www.youtube.com/watch?v=YdIis8rUNww</a>, &copy; VICE Sports</li>
+					<!--<li><a href='https://www.youtube.com/watch?v=I6x9XwazSNo'>https://www.youtube.com/watch?v=I6x9XwazSNo</a></li>-->
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=fydc16RTfCo'>https://www.youtube.com/watch?v=fydc16RTfCo</a>, &copy; my360planet - Johannes Löffelmann</li>
+				</ol>
+			</div>
+		</div>
+
+		<div class='section'>
+			<H2>3. Analysis of System Components</H2>
+			<H3>3.1. Initial Path</H3>
+			<p>
+			The video below shows different paths computed from the initial path planning step.
+			The path computed using only saliency is not temporally smooth, and jumps between different salient areas.
+			The conventional smoothness term makes either the path still jump between different areas or too rigid.
+			On the other hand, the optical flow-based smoothness term helps the path follow a salient object more robustly.
+			</p>
+			<div class='video'>
+				<video id="component" width="1024" height="576" controls>
+					<source src="video/initial_path_comparison.mp4" type="video/mp4">
+						<a href="video/initial_path_comparison.mp4">Video</a>
+				</video>
+			</div>
+			<div class='video_source'>
+				<h4>Video Source</h4>
+				<ol>
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=pV_8ETmQ89w'>https://www.youtube.com/watch?v=pV_8ETmQ89w</a>, &copy; OurWorld360</li>
+				</ol>
+			</div>
+
+			<H3>3.2. FoV-Aware Path</H3>
+			<p>
+			The camera path computed without FoV-aware path planning shows the most salient object (the head of a woman) at the center of the resulting video.
+			On the other hand, the path computed with FoV-aware path planning shows other salient areas as well as the most salient object better.
+			</p>
+			<div class='video'>
+				<video id="component" width="1024" height="576" controls>
+					<source src="video/FoV_aware_path.mp4" type="video/mp4">
+						<a href="video/FoV_aware_path.mp4">Video</a>
+				</video>
+			</div>
+			<div class='video_source'>
+				<h4>Video Source</h4>
+				<ol>
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=3d2PCTiNBAs'>https://www.youtube.com/watch?v=3d2PCTiNBAs</a>, &copy; Boonsri Dickinson Srinivasan</li>
+				</ol>
+			</div>
+			<H3>3.3. Figs. 11 & 12 in the paper</H3>
+			<div class='video'>
+				<button onclick='changeVideo("Figs11_12","video/Fig11.mp4")'>Fig. 11</button>
+				<button onclick='changeVideo("Figs11_12","video/Fig12.mp4")'>Fig. 12</button>
+				<br>
+				<br>
+				<video id="Figs11_12" width="1024" height="576" controls>
+					<source src="video/Fig11.mp4" type="video/mp4">
+						<a href="video/Fig11.mp4">Fig. 11</a>
+						<a href="video/Fig12.mp4">Fig. 12</a>
+				</video>
+			</div>
+			<div class='video_source'>
+				<h4>Video Source</h4>
+				<ol>
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=lvH89OkkKQ8'>https://www.youtube.com/watch?v=lvH89OkkKQ8</a>, &copy; LOSC</li>
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=70vmG1G7q0I'>https://www.youtube.com/watch?v=70vmG1G7q0I</a>, &copy; Gotcha VR</li>
+				</ol>
+			</div>
+		</div>
+
+		<div class='section'>
+			<H2>4. Comparison with Previous Automatic Methods</H2>
+			<p>
+			Here we show comparisons between previous automatic methods and ours, and our user study results.
+			As the results of previous methods are cropped from videos that we downloaded from their project websites,
+			they are of low resolution with compression artifacts.
+			For fair comparison, we degraded the quality of our results by downsampling and upsampling in our user study.
+			</p>
+			<H3>4.1. Comparison with AutoCam</H3>
+			<p>
+			Among the AutoCam results below, the first and second ones are of [Su et al. 2016], and the others are of [Su and Grauman 2017b].
+			The results of [Su et al. 2016] are obtained from example videos of [Hu et al. 2017].
+			The results of [Su and Grauman 2017b] are obtained from its project website.
+			</p>
+			<div class='video'>
+				Click a button on the right to switch to a different example:
+				<button onclick='changeVideo("autocam_comparison","video/autocam/1.mp4")'>1</button>
+				<!--<button onclick='changeVideo("autocam_comparison","video/autocam/2.mp4")'>2</button>-->
+				<button onclick='changeVideo("autocam_comparison","video/autocam/3.mp4")'>2</button>
+				<button onclick='changeVideo("autocam_comparison","video/autocam/4.mp4")'>3</button>
+				<button onclick='changeVideo("autocam_comparison","video/autocam/5.mp4")'>4</button>
+				<button onclick='changeVideo("autocam_comparison","video/autocam/6.mp4")'>5</button>
+				<button onclick='changeVideo("autocam_comparison","video/autocam/7.mp4")'>6</button>
+				<br><br>
+				<video id="autocam_comparison" width="1024" height="576" controls>
+					<source src="video/autocam/1.mp4" type="video/mp4">
+						<a href="video/autocam/1.mp4">1</a>
+						<!--<a href="video/autocam/2.mp4">2</a>-->
+						<a href="video/autocam/3.mp4">2</a>
+						<a href="video/autocam/4.mp4">3</a>
+						<a href="video/autocam/5.mp4">4</a>
+						<a href="video/autocam/6.mp4">5</a>
+						<a href="video/autocam/7.mp4">6</a>
+				</video>
+			</div>
+			<div class='video_source'>
+				<h4>Video Source</h4>
+				<ol>
+					<li>Sports-360, <a href='https://www.youtube.com/watch?v=Q7KP_p_APaM'>https://www.youtube.com/watch?v=Q7KP_p_APaM</a>, &copy; GoPro</li>
+					<!--<li>Sports-360, <a href='https://www.youtube.com/watch?v=PZwWP_oqB68'>https://www.youtube.com/watch?v=PZwWP_oqB68</a></li>-->
+					<li>Sports-360, <a href='https://www.youtube.com/watch?v=YdIis8rUNww'>https://www.youtube.com/watch?v=YdIis8rUNww</a>, &copy; VICE Sports</li>
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=JwtM43kA6Do'>https://www.youtube.com/watch?v=JwtM43kA6Do</a>, &copy; Gardner Creative</li>
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=itS1LuDznDQ'>https://www.youtube.com/watch?v=itS1LuDznDQ</a>, &copy; Martin LOYER</li>
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=p4BTUFwzJDs'>https://www.youtube.com/watch?v=p4BTUFwzJDs</a>, &copy; Michael Wall 360 Producent/Fotograf</li>
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=Ss8zC_FjVBo'>https://www.youtube.com/watch?v=Ss8zC_FjVBo</a>, &copy; Charles Liebert</li>
+				</ol>
+			</div>
+			<br>
+			<p>
+			We also show detailed user study results.
+			In our user study, we used seven videos listed below.
+			</p>
+			<table style='border:0pt; margin-left:auto; margin-right:auto; text-align:center'>
+				<tr><td style='border:0pt'>
+			<img src="imgs/Thumbnail_AutoCam1.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/Thumbnail_AutoCam2.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/Thumbnail_AutoCam3.jpg" width='95%'>
+				</td></tr>
+				<tr><td style='border:0pt'>
+			<img src="imgs/Thumbnail_AutoCam4.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/Thumbnail_AutoCam5.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/Thumbnail_AutoCam6.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/Thumbnail_AutoCam7.jpg" width='95%'>
+				</td></tr>
+			</table>
+			<br>
+			<table style='border:0pt; margin-left:auto; margin-right:auto; text-align:center'>
+				<tr><td style='border:0pt'>
+						(a) Which video shows important events better?
+				</td><td style='border:0pt'>
+						(b) Which video is more comfortable to watch?
+				</td><td style='border:0pt'>
+						(c) Which video do you prefer?
+				</td></tr>
+				<tr><td style='border:0pt'>
+			<img src="imgs/AutoCam1.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/AutoCam2.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/AutoCam3.jpg" width='95%'>
+				</td></tr>
+			</table>
+
+			<H3>4.2. Comparison with Deep 360 Pilot</H3>
+			<p>
+			All the results of Deep 360 Pilot [Hu et al. 2017] are from its project website.
+			</p>
+			<div class='video'>
+				Click a button on the right to switch to a different example:
+				<button onclick='changeVideo("deep360_comparison","video/deep360/1.mp4")'>1</button>
+				<!--<button onclick='changeVideo("deep360_comparison","video/deep360/2.mp4")'>2</button>-->
+				<button onclick='changeVideo("deep360_comparison","video/deep360/3.mp4")'>2</button>
+				<button onclick='changeVideo("deep360_comparison","video/deep360/4.mp4")'>3</button>
+				<button onclick='changeVideo("deep360_comparison","video/deep360/5.mp4")'>4</button>
+				<button onclick='changeVideo("deep360_comparison","video/deep360/6.mp4")'>5</button>
+				<button onclick='changeVideo("deep360_comparison","video/deep360/7.mp4")'>6</button>
+				<button onclick='changeVideo("deep360_comparison","video/deep360/8.mp4")'>7</button>
+				<button onclick='changeVideo("deep360_comparison","video/deep360/9.mp4")'>8</button>
+				<br><br>
+				<video id="deep360_comparison" width="1024" height="576" controls>
+					<source src="video/deep360/1.mp4" type="video/mp4">
+						<a href="video/deep360/1.mp4">1</a>
+						<!--<a href="video/deep360/2.mp4">2</a>-->
+						<a href="video/deep360/3.mp4">2</a>
+						<a href="video/deep360/4.mp4">3</a>
+						<a href="video/deep360/5.mp4">4</a>
+						<a href="video/deep360/6.mp4">5</a>
+						<a href="video/deep360/7.mp4">6</a>
+						<a href="video/deep360/8.mp4">7</a>
+						<a href="video/deep360/9.mp4">8</a>
+				</video>
+			</div>
+			<div class='video_source'>
+				<h4>Video Source</h4>
+				<ol>
+					<li>Sports-360, <a href='https://www.youtube.com/watch?v=Q7KP_p_APaM'>https://www.youtube.com/watch?v=Q7KP_p_APaM</a>, &copy; GoPro</li>
+					<!--<li>Sports-360, <a href='https://www.youtube.com/watch?v=PZwWP_oqB68'>https://www.youtube.com/watch?v=PZwWP_oqB68</a></li>-->
+					<li>Sports-360, <a href='https://www.youtube.com/watch?v=YdIis8rUNww'>https://www.youtube.com/watch?v=YdIis8rUNww</a>, &copy; VICE Sports</li>
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=JwtM43kA6Do'>https://www.youtube.com/watch?v=JwtM43kA6Do</a>, &copy; Gardner Creative</li>
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=nT5ete4d8v0'>https://www.youtube.com/watch?v=nT5ete4d8v0</a>, &copy; Urlaub in &Ouml;sterreich</li>
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=g4Qb_ULYF-0'>https://www.youtube.com/watch?v=g4Qb_ULYF-0</a>, &copy; Barron Effenberger</li>
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=_7e9ej3CbuE'>https://www.youtube.com/watch?v=_7e9ej3CbuE</a>, &copy; Agilibility</li>
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=7g2k0eEQUaM'>https://www.youtube.com/watch?v=7g2k0eEQUaM</a>, &copy; MAMMUT</li>
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=3d2PCTiNBAs'>https://www.youtube.com/watch?v=3d2PCTiNBAs</a>, &copy; Boonsri Dickinson Srinivasan</li>
+				</ol>
+			</div>
+			<br>
+			<p>
+			We also show detailed user study results.
+			In our user study, we used nine videos listed below.
+			</p>
+			<table style='border:0pt; margin-left:auto; margin-right:auto; text-align:center'>
+				<tr><td style='border:0pt'>
+			<img src="imgs/Thumbnail_AutoPilot1.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/Thumbnail_AutoPilot2.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/Thumbnail_AutoPilot3.jpg" width='95%'>
+				</td></tr>
+				<tr><td style='border:0pt'>
+			<img src="imgs/Thumbnail_AutoPilot4.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/Thumbnail_AutoPilot5.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/Thumbnail_AutoPilot6.jpg" width='95%'>
+				</td></tr>
+				<tr><td style='border:0pt'>
+			<img src="imgs/Thumbnail_AutoPilot7.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/Thumbnail_AutoPilot8.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/Thumbnail_AutoPilot9.jpg" width='95%'>
+				</td></tr>
+			</table>
+			<br>
+			<table style='border:0pt; margin-left:auto; margin-right:auto; text-align:center'>
+				<tr><td style='border:0pt'>
+						(a) Which video shows important events better?
+				</td><td style='border:0pt'>
+						(b) Which video is more comfortable to watch?
+				</td><td style='border:0pt'>
+						(c) Which video do you prefer?
+				</td></tr>
+				<tr><td style='border:0pt'>
+			<img src="imgs/deep360_1.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/deep360_2.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/deep360_3.jpg" width='95%'>
+				</td></tr>
+			</table>
+
+			<H3>4.3. Comparison with 360 Hyperlapse</H3>
+			<p>
+			Below we show comparisons between 360 Hyperlapse [Lai et al. 2017] and ours.
+			Note that the input videos are much longer than hyperlapse videos. Thus, we show only some parts of them.
+			</p>
+			<div class='video'>
+				Click a button on the right to switch to a different example:
+				<button onclick='changeVideo("hyperlapse_comparison","video/360hyperlapse/1.mp4")'>1</button>
+				<button onclick='changeVideo("hyperlapse_comparison","video/360hyperlapse/2.mp4")'>2</button>
+				<button onclick='changeVideo("hyperlapse_comparison","video/360hyperlapse/3.mp4")'>3</button>
+				<button onclick='changeVideo("hyperlapse_comparison","video/360hyperlapse/4.mp4")'>4</button>
+				<br><br>
+				<video id="hyperlapse_comparison" width="1024" height="576" controls>
+					<source src="video/360hyperlapse/1.mp4" type="video/mp4">
+						<a href="video/360hyperlapse/1.mp4">1</a>
+						<a href="video/360hyperlapse/2.mp4">2</a>
+						<a href="video/360hyperlapse/3.mp4">3</a>
+						<a href="video/360hyperlapse/4.mp4">4</a>
+				</video>
+			</div>
+			<div class='video_source'>
+				<h4>Video Source</h4>
+				<ol>
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=GMvNWHLiw3Y'>https://www.youtube.com/watch?v=GMvNWHLiw3Y</a>, &copy; Haute Route</li>
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=DygOlYN6Qds'>https://www.youtube.com/watch?v=DygOlYN6Qds</a>, &copy; PJ Orravan</li>
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=6EOq6hIDX-4'>https://www.youtube.com/watch?v=6EOq6hIDX-4</a>, &copy; Golden State Warriors</li>
+					<li>Pano2vid, Youtube link missing</li>
+				</ol>
+			</div>
+			<br>
+			<p>
+			We also show detailed user study results.
+			In our user study, we used four videos listed below.
+			</p>
+			<table style='border:0pt; margin-left:auto; margin-right:auto; text-align:center'>
+				<tr><td style='border:0pt'>
+			<img src="imgs/Thumbnail_Hyperlapse1.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/Thumbnail_Hyperlapse2.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/Thumbnail_Hyperlapse3.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/Thumbnail_Hyperlapse4.jpg" width='95%'>
+				</td></tr>
+			</table>
+			<br>
+			<table style='border:0pt; margin-left:auto; margin-right:auto; text-align:center'>
+				<tr><td style='border:0pt'>
+						(a) Which video shows important events better?
+				</td><td style='border:0pt'>
+						(b) Which video is more comfortable to watch?
+				</td><td style='border:0pt'>
+						(c) Which video do you prefer?
+				</td></tr>
+				<tr><td style='border:0pt'>
+			<img src="imgs/hyperlapse1.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/hyperlapse2.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/hyperlapse3.jpg" width='95%'>
+				</td></tr>
+			</table>
+
+		</div>
+
+		<div class='section'>
+			<H2>5. Comparison with Previous Interactive Methods</H2>
+			<H3>5.1. Other interactive systems</H3>
+			<p>
+			In our user study, we compare our system with two recent interactive methods: PIP [Lin et al. 2017b], and Shot Orientation [Pavel et al. 2017].
+			PIP provides picture-in-picture previews of regions of interest, and Shot Orientation provides a simple interface that allows users to quickly change the viewing direction to a region of interest by pressing a button.
+			As their code is not available, we implemented both methods for the user study.
+			Below we show short demos of PIP and Shot Orientation.
+			</p>
+			<div class='video'>
+				<button onclick='changeVideo("interactive","video/interaction_PIP.mp4")'>PIP</button>
+				<button onclick='changeVideo("interactive","video/interaction_shotOrientation.mp4")'>Shot Orientation</button>
+				<br><br>
+				<video id="interactive" width="1024" height="576" controls>
+					<source src="video/interaction_PIP.mp4" type="video/mp4">
+						<a href="video/interaction_PIP.mp4">PIP</a>
+						<a href="video/interaction_shotOrientation.mp4">Shot Orientation</a>
+				</video>
+			</div>
+			<div class='video_source'>
+				<h4>Video Source</h4>
+				<ol>
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=b6QJlGfovCU'>https://www.youtube.com/watch?v=b6QJlGfovCU</a>, &copy; OurWorld360</li>
+					<li><a href='https://www.youtube.com/watch?v=MKWWhf8RAV8'>https://www.youtube.com/watch?v=MKWWhf8RAV8</a>, &copy; GoPro</li>
+				</ol>
+			</div>
+
+			<H3>5.2. User study dataset</H3>
+			<p>
+			For the user study, we used six 360 videos listed below.
+			The videos include both static and dynamic background.
+			</p>
+			<table style='border:0pt; margin-left:auto; margin-right:auto; text-align:center'>
+				<tr><td style='border:0pt'>
+			<img src="imgs/interaction1.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/interaction2.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/interaction3.jpg" width='95%'>
+				</td></tr>
+				<tr><td style='border:0pt'>
+			<img src="imgs/interaction4.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/interaction5.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/interaction6.jpg" width='95%'>
+				</td></tr>
+			</table>
+
+			<H3>5.3. User study result</H3>
+			<table style='border:0pt; margin-left:auto; margin-right:auto; text-align:center'>
+				<tr><td colspan="3" style='border:0pt; text-align:left'>
+						(a) Which one is easier to locate important events with?
+				</td></tr>
+				<tr><td style='border:0pt'>
+			<img src="imgs/Base1.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/PIP1.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/Shot1.jpg" width='95%'>
+				</td></tr>
+				<tr><td colspan="3" style='border:0pt; text-align:left'>
+						(b) Which one is more convenient to navigate the video with?
+				</td></tr>
+				<tr><td style='border:0pt'>
+			<img src="imgs/Base2.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/PIP2.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/Shot2.jpg" width='95%'>
+				</td></tr>
+				<tr><td colspan="3" style='border:0pt; text-align:left'>
+						(c) Which one do you prefer to use?
+				</td></tr>
+				<tr><td style='border:0pt'>
+			<img src="imgs/Base3.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/PIP3.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/Shot3.jpg" width='95%'>
+				</td></tr>
+				<tr><td colspan="3" style='border:0pt; text-align:left'>
+						(d) Do you prefer to use a combination of two methods over both of them as they are?
+				</td></tr>
+				<tr><td style='border:0pt'>
+				</td><td style='border:0pt'>
+			<img src="imgs/PIP4.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/Shot4.jpg" width='95%'>
+				</td></tr>
+			</table>
+		</div>
+
+		<div class='section'>
+			<H2>6. 360&#176; Video Re-orientation</H2>
+			<table style='border:0pt; margin-left:auto; margin-right:auto; text-align:center'>
+				<tr><td style='border:0pt'>
+			<img src="imgs/HMD_video_watching_1.jpg">
+				</td><td style='border:0pt'>
+			<img src="imgs/HMD_video_watching_2.jpg">
+				</td></tr>
+				<tr><td style='border:0pt'>
+					(a)
+				</td><td style='border:0pt'>
+					(b)
+				</td></tr>
+			</table>
+			<p>
+			An interesting application of our automatic navigation is to generate re-oriented 360&#176; videos.
+			Even wearing a head mounted display (HMD), it can be still difficult to find interesting events as a user must look around in all directions (left image above).
+			This can make 360&#176; video watching a tiring task.
+			Instead, we can generate a re-oriented 360&#176; video so that users can simply enjoying watch important events in front of them not looking around too much (right image above).
+			Below are some examples of re-oriented 360&#176; videos.
+			</p>
+			<div class='video'>
+				<!--<button onclick='changeVideo("HMD","video/HMD/1.mp4")'>Test data 1</button>-->
+				<button onclick='changeVideo("HMD","video/HMD/2.mp4")'>Example 1</button>
+				<button onclick='changeVideo("HMD","video/HMD/3.mp4")'>Example 2</button>
+				<br><br>
+				<video id="HMD" width="1024" height="576" controls>
+					<source src="video/HMD/2.mp4" type="video/mp4">
+						<!--<a href="video/HMD/1.mp4">Test data 1</a>-->
+						<a href="video/HMD/2.mp4">Example 1</a>
+						<a href="video/HMD/3.mp4">Example 2</a>
+				</video>
+			</div>
+			<div class='video_source'>
+				<h4>Video Source</h4>
+				<ol>
+					<!--<li>To be removed, <a href='https://www.youtube.com/watch?v=rG4jSz_2HDY'>https://www.youtube.com/watch?v=rG4jSz_2HDY</a></li>-->
+					<li>Sports-360, <a href='https://www.youtube.com/watch?v=YdIis8rUNww'>https://www.youtube.com/watch?v=YdIis8rUNww</a>, &copy; VICE Sports</li>
+					<li>Pano2vid, Youtube link missing</li>
+				</ol>
+			</div>
+			<p>
+			To verify the usefulness of our system in re-orienting 360&#176; videos, we conducted an additional small survey.
+			We prepared three 360&#176; videos listed below, and applied our automatic navigation system to generate re-oriented 360&#176; videos.
+			Cropped parts of the original videos and their re-oriented results used in the survey are presented below.
+			The center of the videos corresponds to the front of the viewer.
+			</p>
+			<table style='border:0pt; margin-left:auto; margin-right:auto; text-align:center'>
+				<tr><td style='border:0pt'>
+			<img src="imgs/Thumbnail_ReOrientation1.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/Thumbnail_ReOrientation2.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/Thumbnail_ReOrientation3.jpg" width='95%'>
+				</td></tr>
+			</table>
+			<p>
+			We recruited six participants.
+			Each participant was asked to watch three pairs of original and re-oriented videos, and asked two questions:
+			(a) Which one is more comfortable to watch? and
+			(b) Choose the level of dizziness you felt watching the video from three levels: 1. uncomfortable to watch, 2. slightly dizzy but still comfortable, and 3) not dizzy at all.
+			</p>
+			<table style='border:0pt; margin-left:auto; margin-right:auto; text-align:center'>
+				<tr><td style='border:0pt'>
+					(a) Which one is more comfortable to watch?
+				</td><td style='border:0pt'>
+					(b) The level of dizziness
+				</td></tr>
+				<tr><td style='border:0pt'>
+			<img src="imgs/HMD_preference.jpg" width='95%'>
+				</td><td style='border:0pt'>
+			<img src="imgs/HMD_dizziness.jpg" width='95%'>
+				</td></tr>
+			</table>
+			<p>
+			The bar charts above show a summary of the user study.
+			While the participants responded that the re-oriented videos were dizzier to watch, they still preferred the re-oriented ones over the original ones.
+			This shows the potential usefulness of our system in this scenario.
+			</p>
+		</div>
+
+		<div class='section'>
+			<H2>7. Regional Saliency Computation</H2>
+			<p>
+			We use a heuristic approach similar to [Su and Grauman 2017a] to approximate a NFoV region on a spherical panorama in the pre-processing step.
+			Below is its pseudocode.
+			</p>
+
+
+			<table style='border:0pt; margin-left:auto; margin-right:auto; text-align:center'>
+				<tr><td style='border:0pt; width:50%'>
+					<p style='margin-left: 20pt'>
+
+					<code style='font-size:13pt'>
+						rectangle.width = rectangle.height = 3; <br>
+						while(true) { <br>
+						&nbsp;&nbsp;&nbsp;&nbsp;if( rectangle.height &lt; NFoV_region.height ) <br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectangle.height += 2; <br>
+						&nbsp;&nbsp;&nbsp;&nbsp;if( rectangle contains 95% pixels of NFoV_region )<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+						<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;rectangle.width += 2;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;if( rectangle contains 95% pixels of NFoV_region )<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+						}
+					</code>
+				</p>
+
+				</td><td style='border:0pt'>
+					<img src="imgs/Section7.gif" width='95%'>
+				</td></tr>
+			</table>
+		</div>
+
+		<div class='section'>
+			<H2>8. Limitations</H2>
+			<H3>8.1. Failure of finding the optimal path</H3>
+			<p>
+			Our system may fail to find an optimal camera path when saliency estimation fails.
+			The video below shows such an example.
+			Due to the movement and strong contrast of the shadows of people,
+			the shadows are estimated to be more salient than the people,
+			so our method shows a wrong direction that show the shadows.
+			</p>
+			<div class='video'>
+				<br><br>
+				<video id="Failure" width="1024" height="576" controls>
+					<source src="video/failure/encoded_failureCase1.mp4" type="video/mp4">
+				</video>
+			</div>
+			<div class='video_source'>
+				<h4>Video Source</h4>
+				<ol>
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=izF7_vPNDN0'>https://www.youtube.com/watch?v=izF7_vPNDN0</a>, &copy; Strife.tv</li>
+				</ol>
+			</div>
+
+			<H3>8.2. Multiple salient objects</H3>
+			<p>
+			The video below shows another limitation of our method.
+			In the video, there are multiple salient people running around.
+			As a result, our system frequently changes the viewing direction from one person to another, which may be against the intention of a user.
+			</p>
+			<div class='video'>
+				<br><br>
+				<video id="Failure" width="1024" height="576" controls>
+					<source src="video/failure/encoded_failureCase3.mp4" type="video/mp4">
+				</video>
+			</div>
+			<div class='video_source'>
+				<h4>Video Source</h4>
+				<ol>
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=_evOm6vbgtU'>https://www.youtube.com/watch?v=_evOm6vbgtU</a>, &copy; Lorenz Pritz</li>
+				</ol>
+			</div>
+
+			<H3>8.3. Automatic path update against the intention of a user</H3>
+			<p>
+			Our system is designed to show a user-specified direction for a certain amount of time even if there are no salient objects, and then change the direction to a salient object.
+			This behavior may somtimes not match the intention of a user.
+			For example, in the video below, our system originally shows a kid, and a user changes the viewing direction to a climber on the wall who is less salient.
+			The system shows him for a while, and automatically changes back the viewing direction to the kid, which can be against the user's intention.
+			</p>
+			<div class='video'>
+				<br><br>
+				<video id="Failure_interaction" width="1024" height="576" controls>
+					<source src="video/failure/encoded_failureCase4.mp4" type="video/mp4">
+				</video>
+			</div>
+			<div class='video_source'>
+				<h4>Video Source</h4>
+				<ol>
+					<li>Pano2vid, <a href='https://www.youtube.com/watch?v=b6QJlGfovCU'>https://www.youtube.com/watch?v=b6QJlGfovCU</a>, &copy; OurWorld360</li>
+				</ol>
+			</div>
+		</div>
+
+
+
+
+
+
+		<div class='section'>
+			<H2>9. Evaluation using the Pano2Vid Evaluation Metrics</H2>
+			<p>
+				Finally, we present a preliminary comparison among two versions of AutoCam [Su et al. 2016], [Su and Grauman 2017b], and ours
+				using the evaluation metrics proposed in [Su et al. 2016].
+				For evaluation of automatic navigation methods for 360 videos,
+				Su et al. [2016] proposed two groups of evaluation metrics: HumanCam- and HumanEdit-based metrics.
+				HumanCam-based metrics measure the quality of an algorithm-generated NFoV video using normal NFoV videos captured by human,
+				and include Transferability, HumanCam-Likeness, and Transferability.
+				HumanEdit-based metrics measure the quality of an algorithm-generated NFoV video using human annotations,
+				and include cosine similarity between the viewing directions of a human viewer and an algorithm output,
+				and a field-of-view overlap of a human viewer and an algorithm output.
+				For detailed definitions of the metrics, we refer the readers to [Su et al. 2016].
+			</p>
+			<p>
+				Among them, we measured distinguishability, transferability, cosine similarity, and overlap.
+				However, we note that our comparison is INCOMPLETE and only for reference.
+				Regarding distinguishability and transferability, Su and Grauman [2017b] use 86 Youtube videos,
+				and regarding cosine similarity and overlap, they use 40 Youtube videos.
+				Unfortunately, measuring HumanCam-based metrics such as distinguishability and transferrability requires training a video feature extractor that takes tens of days using a modern GPU.
+				Moreover, some videos are no longer available on Youtube.
+				Thus, we sampled 36 videos that are used for both HumanCam-based metric and HumanEdit-based metrics, and still available on Youtube,
+				and measured the metrics mentioned above using them.
+				The table below shows the comparison.
+				Higher numbers mean better.
+				Except for distinguishability, all the measures have values ranging from 0 to 1.
+			</p>
+
+      <table class="table" style="font-size: 25px; width: 100%; border-collapse: collapse; text-align:center">
+          <thead>
+              <tr>
+                  <th></th>
+                  <th></th>
+                  <th>[Su et al. 2016]</th>
+									<th>[Su and Grauman 2017b]</th>
+									<th>Ours</th>
+              </tr>
+          </thead>
+          <tbody>
+          <tr>
+              <td>Distinguishability</td>
+							<td>Error rate(%)</td>
+              <td>12.05</td>
+              <td>17.28</td>
+							<td>67.0</td>
+          </tr>
+          <tr>
+              <td rowspan="2">Transferability</td>
+							<td>Human-&gt;Auto</td>
+              <td>0.517</td>
+              <td>0.591</td>
+							<td>0.812</td>
+          </tr>
+					<tr>
+							<td>Auto-&gt;Human</td>
+							<td>0.584</td>
+							<td>0.617</td>
+							<td>0.654</td>
+					</tr>
+					<tr>
+							<td rowspan="2">Overlap</td>
+							<td>Trajectory</td>
+							<td>0.343</td>
+							<td>0.442</td>
+							<td>0.420</td>
+					</tr>
+					<tr>
+							<td>Frame</td>
+							<td>0.530</td>
+							<td>0.630</td>
+							<td>0.680</td>
+					</tr>
+          </tbody>
+      </table>
+
+  </div>
+
+
+		</div>
+
+		<div class='section'>
+			<H2>References</H2>
+			<ul>
+				<li>Hou-Ning Hu, Yen-Chen Lin, Ming-Yu Liu, Hsien-Tzu Cheng, Yung-Ju Chang, and Min Sun. 2017. Deep 360 pilot: Learning a deep agent for piloting through 360 sports video. In Proc. of CVPR.</li>
+				<li>Wei-Sheng Lai, Yujia Huang, Neel Joshi, Christopher Buelher, Ming-Hsuan Yang, and Sing Bing Kang. 2017. Semantic-driven generation of hyperlapse from 360 video. IEEE Trans. on Visualization and Computer Graphics, PP (99)(2017), 1-1.</li>
+				<li>Yung-Ta Lin, Yi-Chi Liao, Shan-Yuan Teng, Yi-Ju Chung, Liwei Chan, and Bing-Yu Chen. 2017b. Outside-In: Visualizing Out-of-Sight Regions-of-Interest in a 360&#176; Video Using Spatial Picture-in-Picture Previews. In Proc. of UIST.</li>
+				<li>Amy Pavel, Bj&ouml;rn Hartmann, and Maneesh Agrawala. 2017. Shot Orientation Controls for Interactive Cinematography with 360 Video. In Proc. of UIST.</li>
+				<li>Yu-Chuan Su and Kristen Grauman. 2017a. Learning Spherical Convolution for Fast Features from 360&#176; Imagery. In Proc. of NIPS.</li>
+				<li>Yu-Chuan Su and Kristen Grauman. 2017b. Making 360&#176; Video Watchable in 2D: Learning Videography for Click Free Viewing. In Proc. of CVPR.</li>
+				<li>Yu-Chuan Su, Dinesh Jayaraman, and Kristen Grauman. 2016. Pano2Vid: Automatic Cinematography for Watching 360&#176; Videos. In Proc. of ACCV.</li>
+			</ul>
+		</div>
+
+	</body>
+</html>
