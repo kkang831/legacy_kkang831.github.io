@@ -1,5 +1,5 @@
 ---
-title: "A paper is accepted to Sigraph Asia 2022."
+title: "A paper is accepted to Siggraph Asia 2022."
 excerpt: "
 Seongtae Kim, Kyoungkook Kang, Geonung Kim, Seung-Hwan Baek, Sunghyun Cho,
 DynaGAN: 
